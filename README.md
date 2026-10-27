@@ -52,7 +52,7 @@ The default model (width 256, 6 layers, 4.4M params) trained 3 ways on the same 
 | dense + Muon | 1.552 | 4.7 min |
 | MoE (8 experts, top-2) + AdamW | 1.533 | 15.4 min |
 
-Both beat the AdamW baseline, and the gap is there for most of the run, not only at the end. Muon just reuses AdamW's learning rate through `match_rms_adamw`, I didn't tune anything. The MoE gets the best loss but takes almost 8x longer, probably because of my plain Python loop over the experts. One seed per run.
+Both beat the AdamW baseline, and the gap is there for most of the run. Muon just reuses AdamW's learning rate through `match_rms_adamw`, I didn't tune anything. The MoE gets the best loss but takes almost 8x longer, probably because of my plain Python loop over the experts. One seed per run.
 
 ## Running it
 
